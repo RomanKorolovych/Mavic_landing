@@ -1,0 +1,158 @@
+.page__qa {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    align-self: center;
+}
+
+.qa {
+    display: flex;
+    flex-flow: row nowrap
+}
+
+.qa__wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.qa__question {
+    margin-bottom: 5px;
+}
+
+.question {
+    position: relative;
+    
+    font-size: 21px;
+
+    background-color: rgba(0,0,0,.3);
+    
+    padding: 1em 0 1.2em 2em;
+
+}
+    
+.question__answer {
+    font-size: .7em;
+    font-weight: 300;
+    
+    overflow: hidden;
+    height: 0;
+    transition: all 400ms ease-in-out;
+}
+    
+.question--active > .question__answer {
+    margin-top: 1.3em;
+    height: 5em;
+}
+
+.question__controller {
+    position: absolute;
+    top: 0;
+    right: -67px;
+}
+
+.question__controller {
+    width: 67px;
+    height: 72px;
+    
+    background-image: url('../img/icons/dropdown-arrow.png');
+    background-color: #fff;
+    background-size: 20px 13px;
+
+    transition: background-image 300ms ease-in-out;
+}
+
+.question--active > .question__controller {
+    background-image: url('../img/icons/dropdown-arrow-active.png')
+}
+
+.qa__img {
+    width: 320px;
+    height: 125px;
+}
+
+@media(min-width: 280px) and (max-width: 490px) {
+    .question {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 490px) {
+    .qa__wrapper {
+        width: 100%;
+    }
+    
+    .page__qa {
+        grid-row: 1 / 4;
+        grid-column: 1 / 4;
+        
+        align-self: center;
+
+        margin-top: 25px;
+    }
+    
+    .page__title--qa {
+        display: none;
+    }
+
+    .question {        
+        padding: .75em 1em;
+    }
+
+    .question--active > .question__answer {
+        height: 10em;
+    }    
+}
+
+@media(max-width: 771px) {
+    .question {        
+        padding: .75em 1em;
+    }
+        
+    .question__controller {
+        display: none;
+    }
+}
+
+@media(min-width: 491px) and (max-width: 771px) {
+    .question--active > .question__answer {
+        height: 8em;
+    }    
+    
+    .qa__wrapper {
+        width: 95%;
+    }
+}
+
+@media(min-width: 770px) and (max-width: 880px) {
+    .qa__wrapper {
+        width: 85%;
+    }
+}
+
+@media(min-width: 881px) {
+    .page__qa {
+        max-width: 1075px;
+        justify-self: center;
+    }
+
+    .qa__wrapper {
+        width: 757px;
+    }
+
+    .qa__question {
+        width: 690px;
+        margin-bottom: 5px;
+    }
+}
+
+@media(max-width: 1170px) {
+    .qa__img {
+        display: none;
+    }
+}
+
+@media(min-width: 1171px) {
+    .page__qa {
+        justify-self: start;
+    }
+}
